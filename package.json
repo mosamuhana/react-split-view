@@ -1,0 +1,76 @@
+{
+  "name": "react-split-view",
+  "description": "VS Code style Split view.",
+  "private": true,
+  "version": "0.0.1",
+  "license": "MIT",
+  "author": {
+    "name": "Mosa Muhana",
+    "email": "mosamuhana@gmail.com",
+    "url": "https://github.com/mosamuhana/react-split-view"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mosamuhana/react-split-view.git"
+  },
+  "homepage": "https://github.com/mosamuhana/react-split-view",
+  "bugs": {
+    "url": "https://github.com/mosamuhana/react-split-view/issues"
+  },
+  "keywords": [
+    "electron",
+    "react",
+    "typescript",
+    "ts",
+    "splitview",
+    "split",
+    "vscode"
+  ],
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "main": "./dist/index.umd.js",
+  "module": "./dist/index.es.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.es.js",
+      "require": "./dist/index.umd.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc && vite build",
+    "start": "storybook dev -p 6006",
+    "dev": "npm start",
+    "storybook": "npm start",
+    "build-storybook": "storybook build -o docs && touch ./docs/.nojekyll"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "dependencies": {
+    "rc-resize-observer": "^1.3.1"
+  },
+  "devDependencies": {
+    "@storybook/addon-essentials": "^7.0.23",
+    "@storybook/addon-interactions": "^7.0.23",
+    "@storybook/addon-links": "^7.0.23",
+    "@storybook/blocks": "^7.0.23",
+    "@storybook/react": "^7.0.23",
+    "@storybook/react-vite": "^7.0.23",
+    "@storybook/testing-library": "^0.2.0",
+    "@storybook/theming": "^7.0.23",
+    "@types/node": "^20.3.1",
+    "@types/react": "^18.2.14",
+    "@types/react-dom": "^18.2.6",
+    "@vitejs/plugin-react": "^4.0.1",
+    "prop-types": "^15.8.1",
+    "sass": "^1.63.6",
+    "storybook": "^7.0.23",
+    "typescript": "^5.1.3",
+    "vite": "^4.3.9",
+    "vite-plugin-dts": "^2.3.0"
+  }
+}
