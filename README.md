@@ -35,11 +35,11 @@ A React component that imitates VS Code SplitView. As far as I know, the SplitVi
 ## 📦 Install
 
 ```bash
-npm install vs-splitview-react
+npm install react-split-view
 ```
 
 ```bash
-yarn add vs-splitview-react
+yarn add react-split-view
 ```
 
 ---
@@ -52,7 +52,7 @@ import {
   SplitView,
   SplitViewPane,
   SplitViewPaneInfo,
-} from 'vs-splitview-react';
+} from 'react-split-view';
 
 const BasicUsage = () => {
   const [state, setState] = useState<{ paneData: SplitViewPaneInfo[] }>({
