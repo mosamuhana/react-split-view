@@ -1,10 +1,10 @@
-import { Meta } from '@storybook/blocks';
-
-<Meta title="Getting started" />
-
 # React SplitView
 
 A React component that imitates VS Code SplitView. As far as I know, the SplitView function is available, if not, please submit an Issue.
+
+
+## <a href="https://mosamuhana.github.io/react-split-view" target="_blank">Github Pages Demo</a>
+## <a href="https://64980f79fcb8055c316b7d4c-gtxnkcmlxf.chromatic.com" target="_blank">Chromatic Demo</a>
 
 ## ✨ Characteristic
 - 🌈 VSCode similar SplitView function
@@ -16,6 +16,8 @@ A React component that imitates VS Code SplitView. As far as I know, the SplitVi
 - ⛪ Support Hover Delay
 - 🎷 Support for layout storage
 - 📚 Nested layouts are supported
+
+---
 
 ## 🖥 Environment
 
@@ -81,6 +83,75 @@ npm install @devteks/react-split-view
 
 ```bash
 yarn add @devteks/react-split-view
+```
+
+---
+
+## 🔨 Use
+
+```tsx
+
+import { useState, useEffect } from 'react';
+import {
+  SplitView,
+  SplitViewPane,
+  SplitViewPaneInfo,
+} from '@devteks/react-split-view';
+
+const STORE_KEY = 'LAYOUT';
+
+const save = (data: SplitViewPaneInfo[]) => localStorage.setItem(STORE_KEY, JSON.stringify(data));
+
+const load = (): SplitViewPaneInfo[] | undefined => {
+  const text = localStorage.getItem(STORE_KEY);
+  return !text ? undefined : JSON.parse(text);
+};
+
+const initialData: SplitViewPaneInfo[] = [
+  {
+    paneKey: 'Pane1',
+    minSize: 44,
+    maxSize: 44,
+  },
+  {
+    paneKey: 'Pane2',
+    minSize: 120,
+    maxSize: 240,
+    size: 180,
+    snapable: true,
+  },
+  {
+    paneKey: 'Pane3',
+    minSize: 160,
+  },
+  {
+    paneKey: 'Pane4',
+    minSize: 120,
+    maxSize: 240,
+  },
+];
+
+const Example = () => {
+  const [paneData, setPaneData] = useState<SplitViewPaneInfo[]>(() => load() ?? initialData);
+
+  useEffect(() => {
+    save(paneData);
+  }, [paneData]);
+
+  return (
+    <div style={{ height: 800, width: '100%' }}>
+      <SplitView
+        paneData={paneData}
+        onChange={changes => setPaneData([ ...changes ])}
+      >
+        <SplitViewPane paneKey="Pane1">fixed</SplitViewPane>
+        <SplitViewPane paneKey="Pane2">Snapable</SplitViewPane>
+        <SplitViewPane paneKey="Pane3">Content</SplitViewPane>
+        <SplitViewPane paneKey="Pane4">Property</SplitViewPane>
+      </SplitView>
+    </div>
+  );
+};
 ```
 
 ---
@@ -233,6 +304,26 @@ It is used to support the movement of Pane in the same SplitView or between diff
 
 #### `paneMoveTo`
 Move the Pane corresponding to paneKey to the specified position.
+
+<table>
+  <thead>
+    <tr>
+      <td>Parameter</td>
+      <td>Description</td>
+      <td>Type</td>
+      <td>Default Value</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+
 | Parameter          | Description                           | Type                  | Default Value |
 | ------------------ | ------------------------------------- | --------------------- | ------------- |
 | paneData           | Pane data.                            | `SplitViewPaneInfo[]` | -             |

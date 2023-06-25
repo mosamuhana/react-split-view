@@ -27,7 +27,7 @@ A React component that imitates VS Code SplitView. As far as I know, the SplitVi
 
 ---
 
-<table style="border: 1px solid gray">
+<table>
   <tbody>
     <tr>
       <td>
@@ -302,15 +302,44 @@ const Example = () => {
 
 It is used to support the movement of Pane in the same SplitView or between different SplitViews. If you need to implement operations such as Pane's moving, dragging and dropping, layout configuration, etc., these methods can help you.
 
-#### `paneMoveTo`
-Move the Pane corresponding to paneKey to the specified position.
-| Parameter          | Description                           | Type                  | Default Value |
-| ------------------ | ------------------------------------- | --------------------- | ------------- |
-| paneData           | Pane data.                            | `SplitViewPaneInfo[]` | -             |
-| sourcePaneKey      | The paneKey of the Pane to move.      | `string`              | -             |
-| destinationPaneKey | The paneKey to move to.               | `string`              | -             |
-| behand             | Whether it is behind the target Pane. | `boolean`             | false         |
+#### `paneMoveTo`: Move the Pane corresponding to paneKey to the specified position.
 
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Description</th>
+      <th>Type</th>
+      <th>Default Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>paneData</td>
+      <td>Pane data.</td>
+      <td>`SplitViewPaneInfo[]`</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>sourcePaneKey</td>
+      <td>The paneKey of the Pane to move.</td>
+      <td>`string`</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>destinationPaneKey</td>
+      <td>The paneKey to move to.</td>
+      <td>`string`</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>behand</td>
+      <td>Whether it is behind the target Pane.</td>
+      <td>`boolean`</td>
+      <td>false</td>
+    </tr>
+  </tbody>
+</table>
 
 #### `paneMoveToLast`
 Move the Pane corresponding to paneKey to the last position.
@@ -348,3 +377,26 @@ Paste the Pane corresponding to the paneKey to the specified position, and suppo
 
 
 > If you want to move the Pane across the SplitView, remember that the SplitView should contain the SplitViewPane component corresponding to the paneKey.
+
+
+---
+---
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Description</th>
+      <th>Type</th>
+      <th>Default Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
