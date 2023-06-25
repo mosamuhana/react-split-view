@@ -46,44 +46,60 @@ yarn add react-split-view
 
 ## 🔨 Use
 
-```jsx
-import { useState } from 'react';
+```tsx
+
+import { useState, useEffect } from 'react';
 import {
   SplitView,
   SplitViewPane,
   SplitViewPaneInfo,
-} from 'react-split-view';
+} from '../';
 
-const BasicUsage = () => {
-  const [state, setState] = useState<{ paneData: SplitViewPaneInfo[] }>({
-    paneData: [
-      {
-        paneKey: 'Pane1',
-        minSize: 44,
-        maxSize: 44,
-      },
-      {
-        paneKey: 'Pane2',
-        minSize: 120,
-        maxSize: 240,
-        size: 180,
-        snapable: true,
-      },
-      {
-        paneKey: 'Pane3',
-        minSize: 160,
-      },
-      {
-        paneKey: 'Pane4',
-        minSize: 120,
-        maxSize: 240,
-      },
-    ],
-  });
+const STORE_KEY = 'LAYOUT';
+
+const save = (data: SplitViewPaneInfo[]) => localStorage.setItem(STORE_KEY, JSON.stringify(data));
+
+const load = (): SplitViewPaneInfo[] | undefined => {
+  const text = localStorage.getItem(STORE_KEY);
+  return !text ? undefined : JSON.parse(text);
+};
+
+const initialData: SplitViewPaneInfo[] = [
+  {
+    paneKey: 'Pane1',
+    minSize: 44,
+    maxSize: 44,
+  },
+  {
+    paneKey: 'Pane2',
+    minSize: 120,
+    maxSize: 240,
+    size: 180,
+    snapable: true,
+  },
+  {
+    paneKey: 'Pane3',
+    minSize: 160,
+  },
+  {
+    paneKey: 'Pane4',
+    minSize: 120,
+    maxSize: 240,
+  },
+];
+
+const Example = () => {
+  const [paneData, setPaneData] = useState<SplitViewPaneInfo[]>(() => load() ?? initialData);
+
+  useEffect(() => {
+    save(paneData);
+  }, [paneData]);
+
   return (
-    <div style={{ height: 800 }}>
+    <div style={{ height: 800, width: '100%' }}>
       <SplitView
-        paneInfo={state.paneData}
+        paneData={paneData}
+        onChange={changes => setPaneData([ ...changes ])}
       >
         <SplitViewPane paneKey="Pane1">fixed</SplitViewPane>
         <SplitViewPane paneKey="Pane2">Snapable</SplitViewPane>
@@ -93,8 +109,6 @@ const BasicUsage = () => {
     </div>
   );
 };
-
-export default BasicUsage;
 ```
 
 ---
