@@ -6,13 +6,13 @@
   "author": {
     "name": "Mosa Muhana",
     "email": "mosamuhana@gmail.com",
-    "url": "https://github.com/mosamuhana/react-split-view"
+    "url": "https://github.com/mosamuhana"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mosamuhana/react-split-view.git"
   },
-  "homepage": "https://github.com/mosamuhana/react-split-view",
+  "homepage": "https://mosamuhana.github.io/react-split-view",
   "bugs": {
     "url": "https://github.com/mosamuhana/react-split-view/issues"
   },
@@ -44,7 +44,10 @@
     "dev": "npm start",
     "storybook": "npm start",
     "build-storybook": "storybook build -o docs && touch ./docs/.nojekyll",
-    "publish": "npm publish --access public"
+    "npm:publish": "npm publish --access public",
+    "predeploy": "npm run build-storybook",
+    "deploy": "gh-pages -d docs",
+    "chromatic": "npx chromatic --storybook-build-dir=docs --project-token=chpt_d67263946abb939"
   },
   "peerDependencies": {
     "react": "^18.2.0",
@@ -66,11 +69,15 @@
     "@types/react": "^18.2.14",
     "@types/react-dom": "^18.2.6",
     "@vitejs/plugin-react": "^4.0.1",
+    "chromatic": "^6.19.9",
+    "gh-pages": "^5.0.0",
     "prop-types": "^15.8.1",
     "sass": "^1.63.6",
     "storybook": "^7.0.23",
     "typescript": "^5.1.3",
     "vite": "^4.3.9",
     "vite-plugin-dts": "^2.3.0"
-  }
+  },
+  "readme": "ERROR: No README data found!",
+  "_id": "@devteks/react-split-view@0.0.2"
 }
