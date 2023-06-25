@@ -53,7 +53,7 @@ import {
   SplitView,
   SplitViewPane,
   SplitViewPaneInfo,
-} from '../';
+} from 'react-split-view';
 
 const STORE_KEY = 'LAYOUT';
 
