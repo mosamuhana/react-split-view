@@ -2,6 +2,8 @@
 
 A React component that imitates VS Code SplitView. As far as I know, the SplitView function is available, if not, please submit an Issue.
 
+
+## <a href="https://mosamuhana.github.io/react-split-view" target="_blank">Github Pages Demo</a>
 ## <a href="https://64980f79fcb8055c316b7d4c-gtxnkcmlxf.chromatic.com" target="_blank">Chromatic Demo</a>
 
 ## ✨ Characteristic
