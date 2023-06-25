@@ -1,5 +1,5 @@
 {
-  "name": "react-split-view",
+  "name": "@devteks/react-split-view",
   "description": "VS Code style Split view.",
   "version": "0.0.1",
   "license": "MIT",
