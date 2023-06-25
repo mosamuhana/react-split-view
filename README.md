@@ -297,6 +297,7 @@ const Example = () => {
   </tbody>
 </table>
 
+---
 
 ## Global Method
 
@@ -341,46 +342,7 @@ It is used to support the movement of Pane in the same SplitView or between diff
   </tbody>
 </table>
 
-#### `paneMoveToLast`
-Move the Pane corresponding to paneKey to the last position.
-| Parameter     | Description                      | Type                  | Default Value |
-| ------------- | -------------------------------- | --------------------- | ------------- |
-| paneData      | Pane data.	                     | `SplitViewPaneInfo[]` | -             |
-| sourcePaneKey | The paneKey of the Pane to move. | `string`              | -             |
-
-
-#### `paneMoveToFirst`
-Move the Pane corresponding to paneKey to the front position.
-| Parameter     | Description                      | Type                  | Default Value |
-| ------------- | -------------------------------- | --------------------- | ------------- |
-| paneData      | Pane data.	                     | `SplitViewPaneInfo[]` | -             |
-| sourcePaneKey | The paneKey of the Pane to move. | `string`              | -             |
-
-
-#### `paneCut`
-Cut the Pane corresponding to paneKey. Remove the Pane with the specified paneKay from paneData and return this Pane.
-| Parameter     | Description                     | Type                  | Default Value |
-| ------------- | ------------------------------- | --------------------- | ------------- |
-| paneData      | Pane data.	                    | `SplitViewPaneInfo[]` | -             |
-| sourcePaneKey | The paneKey of the Pane to cut. | `string`              | -             |
-
-Return value: Pane data corresponding to sourcePaneKey.
-
-#### `panePaste`
-Paste the Pane corresponding to the paneKey to the specified position, and support cutting and pasting between paneData of different SplitViews.
-| Parameter    | Description                                                             | Type                  | Default Value |
-| ------------ | ----------------------------------------------------------------------- | --------------------- | ------------- |
-| srcPane      | The Pane data to paste. It can be derived from the return value of cutPane, or it can be a new Pane data. | `SplitViewPaneInfo`   | -             |
-| destPaneData | paneData to paste into	                                                 | `SplitViewPaneInfo[]` | -             |
-| paneKey      | Destination paneKey to paste into.	                                     | `string`              | -             |
-| behand       | Whether it is behind the target Pane.	                                 | `boolean`             | false         |
-
-
-> If you want to move the Pane across the SplitView, remember that the SplitView should contain the SplitViewPane component corresponding to the paneKey.
-
-
----
----
+#### `paneMoveToLast`: Move the Pane corresponding to paneKey to the last position.
 
 <table>
   <thead>
@@ -393,10 +355,116 @@ Paste the Pane corresponding to the paneKey to the specified position, and suppo
   </thead>
   <tbody>
     <tr>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
+      <td>paneData</td>
+      <td>Pane data.</td>
+      <td>`SplitViewPaneInfo[]`</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>sourcePaneKey</td>
+      <td>The paneKey of the Pane to move.</td>
+      <td>`string`</td>
+      <td>-</td>
     </tr>
   </tbody>
 </table>
+
+#### `paneMoveToFirst`: Move the Pane corresponding to paneKey to the front position.
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Description</th>
+      <th>Type</th>
+      <th>Default Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>paneData</td>
+      <td>Pane data.</td>
+      <td>`SplitViewPaneInfo[]`</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>sourcePaneKey</td>
+      <td>The paneKey of the Pane to move.</td>
+      <td>`string`</td>
+      <td>-</td>
+    </tr>
+  </tbody>
+</table>
+
+#### `paneCut`: Cut the Pane corresponding to paneKey. Remove the Pane with the specified paneKay from paneData and return this Pane.
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Description</th>
+      <th>Type</th>
+      <th>Default Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>paneData</td>
+      <td>Pane data.</td>
+      <td>`SplitViewPaneInfo[]`</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>sourcePaneKey</td>
+      <td>The paneKey of the Pane to cut.</td>
+      <td>`string`</td>
+      <td>-</td>
+    </tr>
+  </tbody>
+</table>
+
+**Return value**: __Pane data corresponding to sourcePaneKey.__
+
+
+#### `panePaste`: Paste the Pane corresponding to the paneKey to the specified position, and support cutting and pasting between paneData of different SplitViews.
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Description</th>
+      <th>Type</th>
+      <th>Default Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>srcPane</td>
+      <td>
+      The Pane data to paste. It can be derived from the return value of cutPane, or it can be a new Pane data.
+      </td>
+      <td>`SplitViewPaneInfo`</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>destPaneData</td>
+      <td>paneData to paste into</td>
+      <td>`SplitViewPaneInfo[]`</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>paneKey</td>
+      <td>Destination paneKey to paste into.</td>
+      <td>`string`</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>behand</td>
+      <td>Whether it is behind the target Pane.</td>
+      <td>`boolean`</td>
+      <td>false</td>
+    </tr>
+  </tbody>
+</table>
+
+> If you want to move the Pane across the SplitView, remember that the SplitView should contain the SplitViewPane component corresponding to the paneKey.
