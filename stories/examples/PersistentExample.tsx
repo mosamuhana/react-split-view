@@ -1,10 +1,5 @@
-
 import { useState, useEffect } from 'react';
-import {
-  SplitView,
-  SplitViewPane,
-  SplitViewPaneInfo,
-} from '../';
+import { SplitView, SplitViewPane, SplitViewPaneInfo } from '../../';
 
 const STORE_KEY = 'LAYOUT';
 
@@ -48,10 +43,7 @@ export const Example = () => {
 
   return (
     <div style={{ height: 800, width: '100%' }}>
-      <SplitView
-        paneData={paneData}
-        onChange={changes => setPaneData([ ...changes ])}
-      >
+      <SplitView paneData={paneData} onChange={(changes) => setPaneData([...changes])}>
         <SplitViewPane paneKey="Pane1">fixed</SplitViewPane>
         <SplitViewPane paneKey="Pane2">Snapable</SplitViewPane>
         <SplitViewPane paneKey="Pane3">Content</SplitViewPane>

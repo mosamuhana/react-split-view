@@ -1,14 +1,9 @@
-import { useState, useRef, type CSSProperties } from 'react';
+import { CSSProperties } from 'react';
 
-import { SplitView, SplitViewPane, SplitViewPaneInfo } from '..';
+import { SplitView, SplitViewPane, SplitViewPaneInfo } from '../../';
 
 const initialPaneData: SplitViewPaneInfo[] = [
-  {
-    paneKey: 'pane1',
-    minSize: 180,
-    snapable: true,
-    snappedSize: 24,
-  },
+  { paneKey: 'pane1', minSize: 180 },
   { paneKey: 'pane2', minSize: 180 },
   { paneKey: 'pane3', minSize: 400 },
 ];
@@ -43,29 +38,15 @@ const pane3Style: CSSProperties = {
   //backgroundColor: 'pink',
 };
 
-export const Example2 = () => {
-  const [paneData, setPaneData] = useState<SplitViewPaneInfo[]>(() => initialPaneData);
-  const actionRef = useRef<{ updatePaneData?: () => void }>({});
-
+export const Example1 = () => {
   return (
-    <div style={containerStyle}>
-      <SplitView paneData={paneData} onChange={(p) => setPaneData([...p])} actionRef={actionRef}>
+    <div style={containerStyle} className="demo-basic">
+      <SplitView paneData={initialPaneData}>
         <SplitViewPane paneKey="pane1">
           <div style={pane1Style}>Pane 1</div>
         </SplitViewPane>
         <SplitViewPane paneKey="pane2">
-          <div style={pane2Style}>
-            <button
-              onClick={() => {
-                setPaneData((prev) => {
-                  const first = prev[0];
-                  first.snapped = !first.snapped;
-                  return prev.map((x) => ({ ...x }));
-                });
-                actionRef.current?.updatePaneData?.();
-              }}
-            >Pane 2</button>
-          </div>
+          <div style={pane2Style}>Pane 2</div>
         </SplitViewPane>
         <SplitViewPane paneKey="pane3" className="content-pane">
           <div style={pane3Style}>Pane 3</div>

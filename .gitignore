@@ -8,4 +8,6 @@ dist
 *.mdx_
 
 # docs
-_README.md
+/_README.md
+/_package.json
+/static.yml

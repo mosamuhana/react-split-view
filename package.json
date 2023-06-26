@@ -43,7 +43,7 @@
     "start": "storybook dev -p 6006",
     "dev": "npm start",
     "storybook": "npm start",
-    "build-storybook": "storybook build -o docs && touch ./docs/.nojekyll",
+    "build-storybook": "storybook build -o docs-build",
     "npm:publish": "npm publish --access public",
     "predeploy": "npm run build-storybook",
     "deploy": "gh-pages -d docs",
