@@ -1,4 +1,4 @@
-import { SplitViewPaneInfo } from '../../';
+import { SplitViewPaneInfo } from '../../../src/';
 
 export const saveLayout = (layoutName: string, paneData: SplitViewPaneInfo[]) => {
   localStorage.setItem(layoutName, JSON.stringify(paneData));
