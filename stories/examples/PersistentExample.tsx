@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { SplitView, SplitViewPane, SplitViewPaneInfo } from '../../';
+import { SplitView, SplitViewPane, SplitViewPaneInfo } from '../../src/';
 
 const STORE_KEY = 'LAYOUT';
 

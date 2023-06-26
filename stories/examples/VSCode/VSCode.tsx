@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-import { SplitView, SplitViewPane, SplitViewPaneInfo } from '../../../';
+import { SplitView, SplitViewPane, SplitViewPaneInfo } from '../../../src/';
 import { ContentView } from './ContentView';
 import { MenuView } from './MenuView';
 import { StatusBarView } from './StatusBarView';

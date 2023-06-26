@@ -1,6 +1,6 @@
 import { useState, useEffect, type CSSProperties } from 'react';
 
-import { SplitView, SplitViewPane, SplitViewPaneInfo } from '../../../';
+import { SplitView, SplitViewPane, SplitViewPaneInfo } from '../../../src/';
 import { MainView } from './MainView';
 import { saveLayout, loadLayout } from './utils';
 

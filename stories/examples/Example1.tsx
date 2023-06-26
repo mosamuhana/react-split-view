@@ -1,6 +1,6 @@
 import { CSSProperties } from 'react';
 
-import { SplitView, SplitViewPane, SplitViewPaneInfo } from '../../';
+import { SplitView, SplitViewPane, SplitViewPaneInfo } from '../../src/';
 
 const initialPaneData: SplitViewPaneInfo[] = [
   { paneKey: 'pane1', minSize: 180 },
